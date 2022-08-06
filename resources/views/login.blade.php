@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="background-color: #152d6b; ;">
     <div class="container" style="text-align:center;">
         <div class="login-box col-md-4">
-            <form>
+            <form action="{{ route('postlogin') }}" method="POST">
+              @csrf
                 <img src="img/tvri.png" alt="logo" class="img-login">
                 <!-- Email input -->
                 <div class="form-outline mb-3 text-start">
-                    <label class="form-label" for="form2Example1">Username</label>
-                    <input type="email" id="form2Example1" class="form-control" />
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" />
                 </div>
               
                 <!-- Password input -->
                 <div class="form-outline mb-3 text-start">
-                    <label class="form-label" for="form2Example2">Password</label>
-                    <input type="password" id="form2Example2" class="form-control" />
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" />
                 </div>
               
                 <!-- 2 column grid layout for inline styling -->
@@ -45,7 +46,7 @@
                 <!-- <a href="index.html">
                     <button type="button" class="btn btn-outline-danger btn-block mb-4">Cancel</button>
                 </a> -->
-                <button type="button" class="btn btn-primary btn-block mb-4 w-100">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Sign in</button>
             </form>
         </div>
     </div>
